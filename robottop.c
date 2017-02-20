@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-//#include "/home/pi/RobotDriverV2/src/moveController.h"
+#include <robotdriver/movecontroller.h>
 //#include "capteurs.h"
 
 #define TAILLE_MAX 32
@@ -53,8 +53,8 @@ int readAndCall(FILE * file, char c)
       int x = atoi(Xcoord);
       int y = atoi(Ycoord);
       printf("[FILE] go to [%d,%d]\n", x, y);
-      //point_t dest = {x, y};
-      //goForward(&dest);
+      point_t dest = {x, y};
+      goForward(&dest);
       return 0;
     }
     fgetc(file);
