@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-//#include "moveController.h"
+//#include "/home/pi/RobotDriverV2/src/moveController.h"
 //#include "capteurs.h"
 
 #define TAILLE_MAX 32
@@ -10,7 +10,7 @@
 #define RADIUS 30
 #define STARTRADIUS 30
 
-void readAndCall(FILE * file, char c);
+int readAndCall(FILE * file, char c);
 
 int main()
 {
@@ -31,13 +31,14 @@ int main()
     file = fopen("commande.txt", "r");
 
     while((c = fgetc(file)) != EOF)
-        readAndCall(file, c);
+        if(readAndCall(file, c))
+	    return 0;
 
     fclose(file);
     return 0;
 }
 
-void readAndCall(FILE * file, char c)
+int readAndCall(FILE * file, char c)
 {
     if((c >= '0') && (c <= '9')) {
       char Xcoord[TAILLE_COORDONNEES];
@@ -54,7 +55,7 @@ void readAndCall(FILE * file, char c)
       printf("[FILE] go to [%d,%d]\n", x, y);
       //point_t dest = {x, y};
       //goForward(&dest);
-      return;
+      return 0;
     }
     fgetc(file);
     if(c == 'A'){
@@ -67,7 +68,9 @@ void readAndCall(FILE * file, char c)
         printf("[FILE] It's a C \n");
     }
     else {
-        printf("[FILE] PARSING ERROR\n");
-        return;
+	if(c != 255)
+            printf("[FILE] PARSING ERROR: %d\n", c);
+        return 1;
     }
+    return 0;
 }
