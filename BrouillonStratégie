@@ -1,0 +1,15 @@
+Threads nécessaires
+    - Thread sur les capteurs qui indiquent si un obstacle a été détecté
+    - Thread qui gère déplacement et actions du robot
+Le premier thread fera en plus appel a une fonction permettant d'arrêter le moteur si un obstacle est détecté
+Le deuxième thread fera appel a un fonction goto pour le déplacement et à un ensemble d'action
+ 
+Variables partagés
+    - Autant de variables qu'il y a de capteurs
+    - Une variable permettant de définir si les capteurs sont pris en compte (essentiellement nécessaire pour les processus d'évitement)
+ 
+Variable nécessaire dans le deuxième thread
+    - Une varaible receuillant la position finale recherché
+    - Une variable expliquant si une action est a réaliser avant le prochain déplacement
+  
+
