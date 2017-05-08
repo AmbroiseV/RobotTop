@@ -5,10 +5,12 @@
 
 //#include "moveController.h"
 //#include "pathFinder.h"
+//#include "capteurs.h"
 
 #define TAILLE_MAX 32
 #define TAILLE_COORDONNEES 5
 #define RADIUS 30
+#define STARTRADIUS 30
 
 void readAndCall(char *action,char c);
 
@@ -24,12 +26,12 @@ int main(){
     //1 : Pris en compte
     //0 : Pas pris en compte
     int etatCapteur = 1;
-    /*
+    
     //Créé un thread pour les capteurs en se basant sur la fonction
     //maincapteur
     pthread_t tcapteur;
     pthread_create(&tcapteur, NULL, maincapteur, NULL);
-     */
+    
     //ouvre le fichier et la tache sera stocké dans action
     char action[TAILLE_MAX] = "";
     char c;
@@ -37,7 +39,6 @@ int main(){
     commande = fopen("commande.txt", "r");
 
 
-    //move_s pfinal; 
 
     while (fgets(action, TAILLE_MAX, commande) != NULL){
         c = action[0];
@@ -63,7 +64,8 @@ void readAndCall(char *action,char c){
     int y;
     int angle;
     int radius = RADIUS;
-
+    int startRadius = STARTRADIUS;
+    //move_s pfinal; 
 
         if ((c >= '0') && (c <= '9')){
             while(action[i]!= ' '){
@@ -103,8 +105,9 @@ void readAndCall(char *action,char c){
                pfinal.y = y;
                pfinal.angle = angle;
                pfinal.radius = radius;
+               
 
-               goto(pfinal); 
+               goto(startRadius,pfinal); 
              */    
         }
 
