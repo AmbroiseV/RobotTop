@@ -10,6 +10,9 @@
 #define TAILLE_COORDONNEES 5
 #define RADIUS 30
 
+void readAndCall(char *action,char c);
+
+
 int main(){
     //TODO Definir le nombre de capteurs et leur donner un meilleur nom
     // Avant arriere
@@ -29,29 +32,39 @@ int main(){
      */
     //ouvre le fichier et la tache sera stocké dans action
     char action[TAILLE_MAX] = "";
-    char *dechet;
     char c;
-    char Xcoord[TAILLE_COORDONNEES];
-    char Ycoord[TAILLE_COORDONNEES];
-    char anglecoord[TAILLE_COORDONNEES];
-
     FILE* commande = NULL;
     commande = fopen("commande.txt", "r");
-
-    int i = 0;
-    int j = 0;
-    int k = 0;
-
-    int x;
-    int y;
-    int angle;
-    int radius = RADIUS;
 
 
     //move_s pfinal; 
 
     while (fgets(action, TAILLE_MAX, commande) != NULL){
         c = action[0];
+        readAndCall(action, c);
+
+    }
+
+    fclose(commande);
+    return 0;
+
+}
+
+
+void readAndCall(char *action,char c){
+    char Xcoord[TAILLE_COORDONNEES];
+    char Ycoord[TAILLE_COORDONNEES];
+    char anglecoord[TAILLE_COORDONNEES];
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    char *dechet;
+    int x;
+    int y;
+    int angle;
+    int radius = RADIUS;
+
+
         if ((c >= '0') && (c <= '9')){
             while(action[i]!= ' '){
                 Xcoord[i]=action[i];
@@ -110,10 +123,4 @@ int main(){
         else {
             printf("rien\n");
         }
-
-    }
-
-    fclose(commande);
-    return 0;
-
 }
