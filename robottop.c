@@ -16,14 +16,14 @@ int main()
 {
     //TODO Definir le nombre de capteurs et leur donner un meilleur nom
     // Avant arriere
-    int capt_1 = 0;
+    /*int capt_1 = 0;
     int capt_2 = 0;
     int capt_3 = 0;
 
     //Pour definir si les cpateurs doivent être pris en compte
     //1 : Pris en compte
     //0 : Pas pris en compte
-    int etatCapteur = 1;
+    int etatCapteur = 1;*/
 
     //ouvre le fichier et la tache sera stocké dans action
     char c;
