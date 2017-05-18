@@ -1,0 +1,131 @@
+# start:
+D
+180
+A
+2160 1800
+# avant fusée:
+# cylindre 1
+1850 1884 
+D
+90
+R
+P
+1850 1770 
+S
+# cylindre 2
+A
+1850 1884 
+P
+R
+1850 1770 
+S
+# cylindre 3
+A
+1850 1884 
+P
+R
+1850 1770 
+S
+# cylindre 4
+A
+1850 1884 
+P
+R
+1850 1770 
+S
+#chemin pour débôt de cylindre 1:
+A
+D
+270
+1850 1200
+#débôt 1:
+# cylindre 1:
+2880 1350
+D
+0
+L
+R
+2750 1350
+# cylindre 2:
+A
+2880 1455
+L
+R
+2750 1455
+# cylindre 3:
+A
+2880 1560
+L
+R
+2750 1560
+A
+# cylindre milieu:
+2800 1284
+D
+90
+P
+S
+# positione vers cylindre à la fin
+A
+2800 750
+
+#cylindre à la fin
+2316 150
+D
+180
+P
+S
+D
+90
+R 
+2316 0
+Y
+0
+#chemin vers le débôt au milieu des 3 débôt 
+A
+2316 150
+#3 débots, débôt au milieu
+#cylindre 1
+1650 750
+D
+180
+L
+R
+1700 750
+#cylindre 2
+A
+1650 645
+D
+180
+L
+R
+1700 645
+#cylindre 2
+A
+1650 540
+D
+180
+L
+
+
+##fonctions pour les cylindre
+#P: prends cylindre
+#S: stock cylindre
+#L: laisse tomber cylindre
+
+
+##fonctions les mode de mouvement
+#A: à partir de maintenant bouge vers avance
+#R: passer la marche arrière 
+#D: à partir de maintenant les chiffres sont des angles
+
+## les angles sont:
+# <- 0, ^ 90, -> 180, v 270
+
+## fonctions de calibrage
+#X: le prochain chiffre est un chiffre pour calibre la premiere coordonnée
+#Y: le prochain chiffre est un chiffre pour calibre la deuxième coordonnée
+
+
+
+
