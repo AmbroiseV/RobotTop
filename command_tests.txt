@@ -1,0 +1,23 @@
+# start
+D
+0
+900
+0
+A
+0 500
+500 0
+0 0
+D
+0
+# end
+
+##fonctions pour les cylindre
+#P: prends cylindre
+#S: stock cylindre
+#L: laisse tomber cylindre
+
+# Moving functions
+#A: move forward (in mm)
+#R: move backward (in mm)
+#D: a partir de maintenant les chiffres sont des angles en 0.1deg
+
